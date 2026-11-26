@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>轻饮食 AI 管家</title>
+<style>
+:root{--bg:#f8f8f2;--ink:#202b22;--muted:#58675d;--line:#e2e7dd;--green:#244b38;--pale:#e7efdf;--white:#fff;--accent:#d5e799;font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;color:var(--ink);background:var(--bg);font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,a,input,select{font:inherit}a{color:inherit;text-decoration:none}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #698948;outline-offset:4px}button{color:inherit}svg{vertical-align:middle}.icon{width:20px;height:20px;flex:none}.app{min-height:100vh;display:grid;grid-template-columns:228px minmax(0,1fr)}aside{position:sticky;top:0;align-self:start;height:100vh;background:#fff;border-right:1px solid var(--line);padding:34px 19px 22px;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:11px;padding:0 8px;color:#153d2a}.brand-mark{display:grid;place-items:center;width:43px;height:43px;border-radius:14px;background:#244b38;color:#e5f39c}.brand-mark svg{width:26px;height:26px}.brand b{display:block;font-size:17px;letter-spacing:.02em}.brand small{display:block;margin-top:4px;font-size:10px;letter-spacing:.18em;color:#5b6e60}.nav{display:grid;gap:7px;margin-top:53px}.nav a{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;color:#566458;padding:13px 13px;border-radius:11px}.nav a:hover,.nav a[aria-current]{color:#254b37;background:#eaf1e6}.sidefoot{margin-top:auto;border-top:1px solid var(--line);padding:19px 8px 1px}.sidefoot b{font-size:12px}.sidefoot p{font-size:11px;margin:6px 0;color:var(--muted)}main{width:min(100%,1500px);margin:0 auto;padding:24px 40px 26px}.top{display:flex;justify-content:space-between;align-items:center;min-height:42px;margin-bottom:18px}.crumb{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--muted);flex-wrap:wrap}.crumb b{color:var(--ink)}.crumb a:hover{text-decoration:underline}.profile-pill{display:flex;align-items:center;gap:8px;font-size:12px;color:#46564b}.avatar{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#e7efde;color:#244b38;font-weight:700}.hero{display:grid;grid-template-columns:54% 46%;min-height:335px;background:#e8efdf;border-radius:23px;overflow:hidden;position:relative}.hero-copy{padding:38px 37px;z-index:1;align-self:center}.eyebrow{font-size:11px;letter-spacing:.16em;color:#406a50;font-weight:800;display:flex;align-items:center;gap:8px}.eyebrow::before{content:"";width:15px;height:2px;background:#648364;display:inline-block}.hero h1{font-size:clamp(32px,3.7vw,57px);line-height:1.16;letter-spacing:-.055em;margin:15px 0 12px;color:#193d2c}.hero p{color:#425b4b;font-size:14px;line-height:1.8;margin:0 0 23px}.hero-visual{min-height:335px;position:relative;background:#d2ddbe}.hero-visual img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:center 46%}.hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#e8efdf 0%,transparent 24%);pointer-events:none}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:11px 16px;border:1px solid var(--line);border-radius:10px;background:white;font-size:13px;font-weight:700;line-height:1.45}.btn:hover{border-color:#739078}.btn.primary{background:#244b38;color:white;border-color:#244b38}.btn.primary:hover{background:#326349}.btn.light{background:#ffffffa8;border-color:#d3ddca}.btns{display:flex;flex-wrap:wrap;gap:9px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:29px 0 14px}.section-head h2,.panel h2{font-size:23px;margin:0;letter-spacing:-.035em}.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.grid.plans{grid-template-columns:repeat(2,minmax(0,1fr))}.card{display:block;border:1px solid var(--line);border-radius:16px;background:white;overflow:hidden;transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-3px);border-color:#92a991}.card img{width:100%;display:block;aspect-ratio:1.8;object-fit:cover}.plans .card img{aspect-ratio:2.5}.card-copy{padding:12px 14px 14px;position:relative}.card-copy h3{font-size:16px;margin:0 28px 5px 0}.card-copy p{font-size:12px;color:var(--muted);margin:0;line-height:1.65}.arrow{position:absolute;right:12px;top:12px;width:27px;height:27px;display:grid;place-items:center;background:#eef3eb;color:#315642;border-radius:50%;font-size:15px}.bottomline{margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);background:#fff;border-radius:13px;padding:12px 15px;font-size:13px}.bottomline>span{display:flex;align-items:center;gap:8px}.bottomline a{color:#315b42;font-weight:700}.heading{padding:27px 29px;background:#e9f0e3;border-radius:17px}.heading h1,.detail h1{margin:11px 0 9px;font-size:clamp(29px,4vw,44px);letter-spacing:-.05em;color:#193d2c}.heading p,.detail p,.panel p{color:var(--muted);font-size:14px;line-height:1.75;margin:0}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:17px 0}.chip,.tag{font-size:12px;border:1px solid #dce4d7;background:#fff;border-radius:999px;padding:7px 12px;color:#415a48}.chip[aria-pressed=true]{background:#244b38;border-color:#244b38;color:white}.tag{background:#edf3e8;display:inline-block}.tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}.detail{display:grid;grid-template-columns:43% minmax(0,1fr);background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}.detail>img{width:100%;height:100%;min-height:301px;object-fit:cover}.detail-copy{padding:30px;align-self:center}.detail-copy .btns{margin-top:20px}.split{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:18px 22px}.panel h2{font-size:19px;margin-bottom:10px}.panel ul{margin:0;padding:0;list-style:none}.panel li{border-bottom:1px solid var(--line);padding:10px 0;font-size:13px;line-height:1.65}.panel li:last-child{border:0;padding-bottom:0}.panel li b{color:#28543a;margin-right:9px}.panel .btns{margin-top:14px}.stack{display:grid;gap:14px;margin-top:16px}.record{display:flex;justify-content:space-between;align-items:center;gap:12px}.record a{color:#244b38;text-decoration:underline}.empty{padding:22px;color:var(--muted);font-size:14px;border:1px dashed #c9d5c5;border-radius:12px}form{display:grid;gap:14px}label{display:grid;gap:6px;font-size:13px;font-weight:700}input,select{width:100%;padding:10px;border:1px solid #bfcbbf;background:white;border-radius:8px;color:#26372a}.preview{max-width:100%;max-height:220px;border-radius:12px;object-fit:cover}.toast{position:fixed;bottom:24px;right:24px;background:#234b37;color:white;border-radius:10px;padding:13px 16px;font-size:13px;z-index:10;box-shadow:0 8px 26px #193d2c30}.toast:empty{display:none}.back{display:inline-block;color:#365e46;font-size:13px;font-weight:700;margin-top:17px}.back:hover{text-decoration:underline}.spaced{margin-top:15px}.compact{padding:8px 12px}.cost{font-weight:700;color:#28543a}
+@media(max-width:1080px){.app{grid-template-columns:180px minmax(0,1fr)}main{padding-inline:25px}.hero-copy{padding:28px}.grid{gap:10px}.card-copy{padding-inline:11px}}
+@media(max-width:760px){.app{display:block}aside{z-index:5;position:fixed;inset:auto 0 0;height:auto;padding:5px 8px max(5px,env(safe-area-inset-bottom));border:0;border-top:1px solid var(--line)}aside .brand,.sidefoot{display:none}.nav{margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.nav a{padding:7px 3px;flex-direction:column;gap:4px;font-size:11px}.nav .icon{width:19px;height:19px}main{padding:12px 15px 86px}.top{margin-bottom:10px}.hero{grid-template-columns:1fr;min-height:0}.hero-copy{padding:24px 19px}.hero h1{margin:11px 0 8px}.hero p{margin-bottom:14px}.hero-visual{min-height:155px;height:34vw}.hero-visual img{object-position:center 48%}.hero-visual:after{background:linear-gradient(#e8efdf 0%,transparent 24%)}.grid,.grid.plans{grid-template-columns:repeat(2,minmax(0,1fr))}.detail,.split{grid-template-columns:1fr}.detail>img{min-height:0;height:205px}.detail-copy,.heading{padding:20px}.plans .card img{aspect-ratio:1.55}.toast{bottom:72px;right:12px}.bottomline{align-items:start}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+h1[tabindex="-1"]:focus{outline:none}</style></head>
+<body><div class="app"><aside><a class="brand" href="#home"><span class="brand-mark" id="brand-mark"></span><span><b>轻饮食 AI 管家</b><small>LIGHT BITES</small></span></a><nav class="nav" aria-label="主导航"></nav><div class="sidefoot"><b>数字媒体艺术 · 产品原型</b><p>项目策划 / 葛可君</p></div></aside><main id="view"></main></div><div class="toast" role="status"></div>
+<script>
+(() => {
+const photos = ["assets/meal-1.jpg","assets/meal-2.jpg","assets/meal-3.jpg","assets/meal-4.jpg","assets/meal-5.jpg","assets/meal-6.jpg"];
+const icons = {
+leaf:'<path d="M20 4c-7 0-13 3-13 9a5 5 0 0 0 5 5c6 0 9-6 8-14Z"/><path d="M4 21c3-5 6-8 11-11"/>',
+home:'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1Z"/>',
+grid:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
+note:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6m-6 4h6m-6 4h4"/>',
+user:'<circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/>',
+camera:'<path d="M3 7h4l2-3h6l2 3h4v13H3Z"/><circle cx="12" cy="13" r="4"/>',
+clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+water:'<path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11Z"/>'
+};
+function icon(name){return '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">'+icons[name]+'</svg>'}
+const scenes = [
+ {id:'canteen',name:'学校食堂',desc:'预算友好的食堂选餐',intro:'按食堂当天供应，从主食、蛋白质食物和蔬菜里各选一样。',pic:1},
+ {id:'takeout',name:'工作日外卖',desc:'工作忙也能快速选餐',intro:'从常见外卖套餐里找好搭配，留意蔬菜份量和酱汁。',pic:2},
+ {id:'dorm',name:'宿舍简易餐',desc:'少设备也能轻松准备',intro:'从免开火早餐到微波加热，按宿舍的设备条件选择。',pic:3},
+ {id:'homecook',name:'家庭简易晚餐',desc:'用常见食材做一餐',intro:'用米饭或薯类、蛋白质食物和时令蔬菜搭配晚餐。',pic:4}
+];
+const meals = [
+ ['canteen','tomato','番茄炒蛋杂粮餐',1,12,10,'一份杂粮饭搭配番茄炒蛋、绿叶菜和豆腐，适合在食堂窗口灵活组合。','杂粮饭','番茄炒蛋、豆腐','时令绿叶菜','没有杂粮饭时可选米饭，绿叶菜可换成当天的油麦菜或西兰花。','按窗口供应选主食，再选炒蛋与豆腐，最后加一份时令蔬菜。'],
+ ['canteen','purple','紫米豆蔬餐',5,10,8,'紫米饭配玉米、毛豆和两样时令蔬菜。','紫米饭、玉米','毛豆','清炒时蔬','紫米饭可换成糙米饭，毛豆可换成豆干。','先选杂粮主食，再从窗口选择豆类和蔬菜。'],
+ ['takeout','chicken','鸡肉西兰花便当',2,24,15,'鸡肉便当搭配米饭、西兰花和胡萝卜，点餐时可按需要加一份时蔬。','米饭','鸡肉','西兰花、胡萝卜','鸡肉可换成清蒸鱼或豆腐，可备注酱汁分装。','查看套餐配菜，蔬菜偏少时单点一份。'],
+ ['takeout','pumpkin','南瓜鸡肉饭',0,29,20,'杂粮饭配鸡肉、南瓜和西兰花。','杂粮饭、南瓜','鸡肉、鸡蛋','西兰花、小番茄','西兰花可换成凉拌黄瓜，米饭可选普通米饭。','按口味选少酱版本，搭配白水或无糖茶。'],
+ ['dorm','oats','香蕉燕麦豆浆杯',3,9,6,'用即食燕麦、香蕉和无糖豆浆搭一份快捷早餐，再带上一枚苹果。','即食燕麦','无糖豆浆','香蕉、苹果','香蕉可换成当季水果，豆浆可换成无糖酸奶。','按燕麦包装提示冲泡，加入香蕉片，搭配即饮豆浆。'],
+ ['dorm','microwave','微波杂粮豆蔬碗',5,14,12,'有微波炉时，可用即食杂粮饭、豆制品和蔬菜快速组合。','即食杂粮饭','豆干或即食毛豆','即食蔬菜','没有微波炉时，可用全麦面包替换需加热主食。','按食品包装要求加热，盛入碗中并加入可即食配菜。'],
+ ['homecook','tofu','菌菇豆腐青菜餐',4,16,18,'豆腐、菌菇和青菜搭一碗糙米饭，适合在家简单做。','糙米饭','豆腐','青菜、菌菇','青菜可换成油麦菜，糙米也可换成米饭或红薯。','备好糙米饭。先炒菌菇，再加入豆腐和青菜，彻底烹熟后搭配米饭。'],
+ ['homecook','rice','鸡肉南瓜杂粮盘',0,21,30,'在家组合鸡肉、杂粮饭、烤南瓜和焯水蔬菜。','杂粮饭、南瓜','鸡肉、鸡蛋','西兰花、小番茄','按现有食材把南瓜换成红薯，鸡肉也可换成豆腐。','准备杂粮饭，将鸡肉充分煮熟，再搭配烹熟的南瓜、西兰花和洗净的小番茄。']
+].map(([scene,id,name,pic,cost,time,desc,carb,protein,veg,swap,method])=>({scene,id,name,pic,cost,time,desc,carb,protein,veg,swap,method}));
+const nav=[['home','home','首页'],['scenes','grid','场景探索'],['journal','note','饮食记录'],['profile','user','偏好设置']];
+const view=document.querySelector('#view');
+const state={budget:false,preview:''};
+function load(key,fallback){try{return JSON.parse(localStorage.getItem('lightbites:'+key))??fallback}catch{return fallback}}
+function save(key,value){try{localStorage.setItem('lightbites:'+key,JSON.stringify(value));return true}catch{return false}}
+function esc(value){return String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+const sceneURL=s=>'#scene/'+s.id;
+const mealURL=m=>'#meal/'+m.id;
+const image=(i,alt)=>'<img src="'+photos[i]+'" alt="'+esc(alt)+'">';
+const button=(href,label,type='')=>'<a class="btn '+type+'" href="'+href+'">'+label+'</a>';
+const card=(url,i,title,desc)=>'<a class="card" href="'+url+'">'+image(i,title)+'<div class="card-copy"><h3>'+title+'</h3><p>'+desc+'</p><span class="arrow" aria-hidden="true">↗</span></div></a>';
+const sceneCards=()=>scenes.map(s=>card(sceneURL(s),s.pic,s.name,s.desc)).join('');
+const mealCards=items=>items.map(m=>card(mealURL(m),m.pic,m.name,'<span class="cost">约 ¥'+m.cost+'</span> / '+m.time+' 分钟')).join('');
+const heading=(level,title,desc)=>'<header class="heading"><div class="eyebrow">'+level+'</div><h1>'+title+'</h1><p>'+desc+'</p></header>';
+function today(){return new Intl.DateTimeFormat('zh-CN',{dateStyle:'medium'}).format(new Date())}
+function waterKey(){return 'water:'+today()}
+function top(parts){return '<div class="top"><nav class="crumb" aria-label="当前位置">'+parts.map(([name,url])=>url?'<a href="'+url+'">'+name+'</a>':'<b aria-current="page">'+name+'</b>').join('<span aria-hidden="true">›</span>')+'</nav><a class="profile-pill" href="#profile"><span class="avatar">'+(load('role','student')==='worker'?'周':'林')+'</span><span>我的偏好</span></a></div>'}
+function home(){
+ return top([['首页']])+'<section class="hero"><div class="hero-copy"><div class="eyebrow">轻饮食 AI 管家</div><h1>把一日三餐<br>搭配得刚刚好。</h1><p>从食堂到家里的餐桌，找到适合你的一餐。</p><div class="btns">'+button('#scan',icon('camera')+' 拍照记录','primary')+button('#scenes','看看怎么搭配 ↗','light')+'</div></div><div class="hero-visual">'+image(0,'杂粮饭、鸡肉与时蔬餐盘')+'</div></section><section><div class="section-head"><div><h2>今天在哪儿吃？</h2><p>选择用餐场景，查看可以直接照着搭配的餐食。</p></div></div><div class="grid">'+sceneCards()+'</div></section><div class="bottomline"><span>'+icon('water')+' 今日饮水 · '+load(waterKey(),0)+' 杯</span><a href="#journal">查看我的记录 →</a></div>';
+}
+function sceneList(){return top([['首页','#home'],['场景探索']])+heading('场景探索','按用餐场景找搭配','从学校食堂、工作日外卖、宿舍简易餐和家庭晚餐中选择。')+'<div class="grid spaced">'+sceneCards()+'</div>'}
+function scenePage(s){
+ const preferred=Number(load('budget',15));
+ const matches=meals.filter(m=>m.scene===s.id&&(!state.budget||m.cost<=preferred));
+ return top([['首页','#home'],[s.name]])+heading('场景方案',s.name,s.intro)+'<div class="section-head"><div><h2>可选餐食</h2><p>点击餐食查看食材搭配和替换建议。</p></div></div><div class="chips"><button class="chip" data-filter="all" aria-pressed="'+!state.budget+'">全部方案</button><button class="chip" data-filter="budget" aria-pressed="'+state.budget+'">¥'+preferred+' 以内</button></div>'+(matches.length?'<div class="grid plans">'+mealCards(matches)+'</div>':'<div class="empty">当前预算内暂无示例方案。可查看全部方案，或在偏好设置调整预算。</div>')+'<a class="back" href="#home">← 返回首页</a>';
+}
+function mealPage(m){
+ const s=scenes.find(item=>item.id===m.scene);
+ const liked=load('favorites',[]).includes(m.id);
+ return top([['首页','#home'],[s.name,sceneURL(s)],[m.name]])+'<article class="detail">'+image(m.pic,m.name+'示意图')+'<div class="detail-copy"><div class="eyebrow">餐食详情</div><h1>'+m.name+'</h1><p>'+m.desc+'</p><div class="tags"><span class="tag">'+s.name+'</span><span class="tag">参考预算 ¥'+m.cost+'</span><span class="tag">约 '+m.time+' 分钟</span></div><div class="btns"><button class="btn primary" data-record="'+m.id+'">'+icon('note')+' 记为今天的一餐</button><button class="btn" data-fav="'+m.id+'" aria-pressed="'+liked+'">'+(liked?'♥ 已收藏':'♡ 收藏')+'</button></div></div></article><div class="split"><section class="panel"><h2>这餐怎么搭</h2><ul><li><b>主食</b>'+m.carb+'</li><li><b>蛋白质食物</b>'+m.protein+'</li><li><b>蔬菜 / 水果</b>'+m.veg+'</li></ul></section><section class="panel"><h2>怎么准备或替换</h2><ul><li><b>准备</b>'+m.method+'</li><li><b>替换</b>'+m.swap+'</li></ul></section></div><a class="back" href="'+sceneURL(s)+'">← 返回'+s.name+'</a>';
+}
+function journal(){
+ const records=load('records',[]);
+ const items=records.map(r=>'<li class="record"><span>'+(r.meal?'<a href="#meal/'+r.meal+'">'+esc(r.name)+'</a>':esc(r.name))+'<br><small>'+esc(r.date)+'</small></span><button class="btn compact" data-remove="'+r.id+'">删除</button></li>').join('');
+ const favs=meals.filter(m=>load('favorites',[]).includes(m.id));
+ return top([['首页','#home'],['饮食记录']])+heading('饮食档案','我的饮食记录','查看已记下的餐食，也可以手动添加或记录饮水。')+'<div class="stack"><section class="panel"><h2>今日饮水 · '+load(waterKey(),0)+' 杯</h2><div class="btns"><button class="btn primary" data-water="1">+ 记一杯</button><button class="btn" data-water="-1" '+(load(waterKey(),0)===0?'disabled':'')+'>撤销一杯</button></div></section><section class="panel"><h2>餐食记录</h2><form id="manual"><label>餐食名称<input name="food" required maxlength="48" placeholder="例如：番茄炒蛋和米饭"></label><div><button class="btn primary">添加记录</button></div></form><ul class="spaced">'+(items||'<li>还没有餐食记录。</li>')+'</ul></section><section class="panel"><h2>收藏的搭配</h2>'+(favs.length?'<div class="grid plans">'+mealCards(favs)+'</div>':'<p>收藏的餐食会显示在这里。</p>')+'</section></div>';
+}
+function profile(){
+ return top([['首页','#home'],['偏好设置']])+heading('个人偏好','设置用餐偏好','每餐预算用于场景页筛选。')+'<section class="panel spaced"><form id="preferences"><label>日常用餐身份<select name="role"><option value="student" '+(load('role','student')==='student'?'selected':'')+'>大学生</option><option value="worker" '+(load('role','student')==='worker'?'selected':'')+'>上班族</option></select></label><label>每餐预算（元）<input name="budget" type="number" min="1" max="999" step="1" required value="'+Number(load('budget',15))+'"></label><div><button class="btn primary">保存偏好</button></div></form></section>';
+}
+function scan(){
+ return top([['首页','#home'],['拍照记录']])+heading('食物识别演示','拍照记录一餐','可上传照片在本地预览，或打开示例体验识别结果和修改流程。')+'<section class="panel spaced"><label>选择餐食照片<input id="photo" type="file" accept="image/*"></label><div id="preview" class="spaced" '+(state.preview?'':'hidden')+'>'+(state.preview?'<img class="preview" src="'+state.preview+'" alt="上传的餐食照片">':'')+'</div><div class="btns">'+button('#scan-result','打开示例识别结果','primary')+button('#journal','手动添加餐食')+'</div></section>';
+}
+function scanResult(){
+ return top([['首页','#home'],['拍照记录','#scan'],['示例识别结果']])+'<div class="detail">'+image(0,'示例餐食照片')+'<section class="detail-copy"><div class="eyebrow">识别结果演示</div><h1>示例餐盘</h1><p>预设示例食材为杂粮饭、鸡肉、西兰花和南瓜。下面的餐食名称可以修改。</p><form id="manual" class="spaced"><label>餐食名称<input name="food" value="杂粮鸡肉时蔬餐" required maxlength="48"></label><div><button class="btn primary">保存到饮食记录</button></div></form></section></div><a class="back" href="#scan">← 返回拍照记录</a>';
+}
+function render(){
+ const [page,id]=location.hash.slice(1).split('/');
+ const scene=scenes.find(s=>s.id===id),meal=meals.find(m=>m.id===id);
+ const active=(page==='scene'||page==='meal')?'scenes':(page==='scan'||page==='scan-result'||!page)?'home':page;
+ document.querySelector('.nav').innerHTML=nav.map(([route,symbol,title])=>'<a href="#'+route+'" '+(route===active?'aria-current="page"':'')+'>'+icon(symbol)+title+'</a>').join('');
+ view.innerHTML=page==='scene'&&scene?scenePage(scene):page==='meal'&&meal?mealPage(meal):page==='scenes'?sceneList():page==='journal'?journal():page==='profile'?profile():page==='scan'?scan():page==='scan-result'?scanResult():home();
+ document.title=view.querySelector('h1').textContent.replace(/\s+/g,' ')+' · 轻饮食 AI 管家';
+}
+let toastTimer;
+function toast(message){const node=document.querySelector('.toast');node.textContent=message;clearTimeout(toastTimer);toastTimer=setTimeout(()=>node.textContent='',2300)}
+function persist(key,value,success){if(!save(key,value)){toast('浏览器未能保存数据，请检查本地存储设置。');return false}toast(success);return true}
+function record(name,meal){return persist('records',[{name,meal,date:today(),id:Date.now().toString(36)+Math.random().toString(36).slice(2,7)},...load('records',[])],'已保存到饮食记录')}
+view.addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ const {filter,record:mealId,fav,water,remove}=b.dataset;
+ if(filter){state.budget=filter==='budget';render();view.querySelector('[data-filter="'+filter+'"]').focus()}
+ if(mealId){const m=meals.find(item=>item.id===mealId);record(m.name,m.id)}
+ if(fav){const list=load('favorites',[]),exists=list.includes(fav);if(persist('favorites',exists?list.filter(x=>x!==fav):[...list,fav],exists?'已取消收藏':'已加入收藏')){render();view.querySelector('[data-fav]').focus()}}
+ if(water){const count=Math.max(0,load(waterKey(),0)+Number(water));if(persist(waterKey(),count,'今日饮水已更新')){render();const target=view.querySelector('[data-water="'+water+'"]');(target.disabled?view.querySelector('[data-water="1"]'):target).focus()}}
+ if(remove){if(persist('records',load('records',[]).filter(r=>r.id!==remove),'已删除记录')){render();view.querySelector('[name="food"]').focus()}}
+});
+view.addEventListener('submit',e=>{
+ e.preventDefault();const data=new FormData(e.target);
+ if(e.target.id==='manual'){const name=data.get('food').trim();if(!name){toast('请输入餐食名称');return}if(record(name)){if(location.hash==='#journal'){render();view.querySelector('[name="food"]').focus()}else{location.hash='journal'}}}
+ if(e.target.id==='preferences'){if(save('role',data.get('role'))&&persist('budget',Number(data.get('budget')),'偏好已保存'))render()}
+});
+view.addEventListener('change',e=>{
+ if(e.target.id!=='photo')return;
+ const file=e.target.files[0];if(!file)return;
+ if(!file.type.startsWith('image/')){toast('请选择图片文件');return}
+ if(state.preview)URL.revokeObjectURL(state.preview);
+ state.preview=URL.createObjectURL(file);
+ const node=document.querySelector('#preview');node.hidden=false;node.innerHTML='<img class="preview" alt="上传的餐食照片">';node.firstChild.src=state.preview;
+});
+window.addEventListener('hashchange',()=>{state.budget=false;render();window.scrollTo(0,0);const h=view.querySelector('h1');h.tabIndex=-1;h.focus({preventScroll:true})});
+document.querySelector('#brand-mark').innerHTML=icon('leaf');render();
+
+})();
+</script></body></html>
